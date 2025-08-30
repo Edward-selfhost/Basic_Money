@@ -1,0 +1,18 @@
+body {
+    font-size: 20px;
+}
+
+form,
+form input,
+form button {
+    font-size: 20px;
+}
+
+.form-box {
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+
+}

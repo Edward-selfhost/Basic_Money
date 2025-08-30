@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Basic Money Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; }
         table { border-collapse: collapse; width: 100%; }
@@ -11,14 +12,27 @@
 </head>
 <body>
     <h1>Basic Money Tracker</h1>
-    
+    <p>Welcome to Basic Money! A simple money tracking app.</p>
+
+    <h2>Add New Entry</h2>
+    <p> Here you can add data entries to your Basic Money Table.</p>
+    <form action="/add" method="post">
+        <input type="date" name="date" required>
+        <input type="number" name="income" placeholder="Income" required>
+        <input type="number" name="expense" placeholder="Expense" required>
+        <input type="number" name="saving" placeholder="Saving" required>
+        <button type="submit">Add</button>
+    </form>
+    <p></p>
+    <h2> Your Basic Money Table</h2>
+    <p> Here you can see your Basic Money Table and edit them under the edit column.</p>
     <table>
         <tr>
             <th>Date</th>
             <th>Income</th>
             <th>Expense</th>
             <th>Saving</th>
-            <th>Actions</th>
+            <th>Edit</th>
         </tr>
         {% for row in data %}
         <tr>
@@ -27,11 +41,11 @@
             <td>{{ row[2] }}</td>
             <td>{{ row[3] }}</td>
             <td>
-                <form action="/edit" method="post">
-                    <input type="hidden" name="date" value="{{ row[0]}}">
-                    <input type="number" name="income" value="{{ row[1] }}">
-                    <input type="number" name="expense" value="{{ row[2] }}">
-                    <input type="number" name="saving" value="{{ row[3] }}">
+                <form action="/edit" method="post" id="form-box">
+                    <input type="hidden" name="date" value="{{ row[0]}}" class="form-box">
+                    <input type="number" name="income" value="{{ row[1] }}" class="form-box">
+                    <input type="number" name="expense" value="{{ row[2] }}" class="form-box">
+                    <input type="number" name="saving" value="{{ row[3] }}" class="form-box">
                     <button type="submit">Update</button>
                 </form>
             </td>
@@ -39,13 +53,5 @@
         {% endfor %}
     </table>
 
-    <h2>Add New Entry</h2>
-    <form action="/add" method="post">
-        <input type="date" name="date" required>
-        <input type="number" name="income" placeholder="Income" required>
-        <input type="number" name="expense" placeholder="Expense" required>
-        <input type="number" name="saving" placeholder="Saving" required>
-        <button type="submit">Add</button>
-    </form>
 </body>
 </html>
