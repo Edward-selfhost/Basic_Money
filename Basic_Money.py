@@ -2,7 +2,7 @@ import sqlite3,os,time
 from pathlib import Path
 from datetime import datetime
 
-db_path=("/workspace/Transfer/projects/Python/Apps/Basic_Money/Basic_Money.db")
+db_path=("/home/edward/Documents/Vsc/Basic_Money/Basic_Money.db")
 
 #db_path.parent.mkdir(parents=True,exist_ok=True)
 
