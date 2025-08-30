@@ -75,6 +75,7 @@ def main():
     print("1 --- Add a data entry")
     print("2 --- Show data")
     print("3 --- Edit a existing data entry")
+    print("4 --- Quit")
     action = int(input())
     if action == 1:
         clear()
@@ -85,6 +86,9 @@ def main():
     elif action == 3:
         clear()
         edit_data()
+    elif action == 4:
+        clear()
+        exit()
     else:
         print("Enter a vaild input.")
         time.sleep(2)
