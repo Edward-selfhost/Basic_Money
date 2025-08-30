@@ -25,13 +25,7 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def new_data_entry():
-    date = input("Please enter the date of the data: (YYYY-MM-DD)")
-    #date = datetime.now().strftime("%Y-%m-%d")
-    income = input("please enter your income:")
-    expense = input("Pleae enter your expense:")
-    saving = input("Please enter your savings:")
-    
+def new_data_entry(date, income, expense, saving):
     conn=sqlite3.connect(db_path)
     cursor=conn.cursor()
     cursor.execute("INSERT INTO data (date,income,expense,saving) VALUES(?,?,?,?)", (date,income,expense,saving))
@@ -49,13 +43,7 @@ def show_data():
         print(f"|{row[0]} | {row[1]}     | {row[2]}       | {row[3]}      |")
     main()
 
-def edit_data():
-    date = input("What is the data of the entry you want to edit? (YYYY-MM-DD)")
-    print("Please enter the new correct data.")
-    income = input("please enter your income:")
-    expense = input("Pleae enter your expense:")
-    saving = input("Please enter your savings:")
-
+def edit_data(date, income, expense, saving):
     conn=sqlite3.connect(db_path)
     cursor=conn.cursor()
 
