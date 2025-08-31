@@ -17,6 +17,10 @@ def add():
     database.add_data(date, income, expense, saving)
     return redirect(url_for("index"))
 
+@app.route("/add_form", methods=["GET","POST"])
+def add_form():
+    return render_template("add.html")
+
 @app.route("/edit", methods=["POST"])
 def edit():
     date=request.form["date"]

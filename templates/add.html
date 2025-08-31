@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Money - Adding new entry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h2>Add New Entry</h2>
+    <p> Here you can add data entries to your Basic Money Table.</p>
+    <form action="/add" method="post">
+        <input type="date" name="date" required>
+        <input type="number" name="income" placeholder="Income" required>
+        <input type="number" name="expense" placeholder="Expense" required>
+        <input type="number" name="saving" placeholder="Saving" required>
+        <button type="submit">Add</button>
+    </form>
+    <a href="{{ url_for('index') }}">⬅ Back to Home</a>
+</body>
+</html>
