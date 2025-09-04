@@ -29,7 +29,7 @@ def add_data(date, income, expense, saving):
 def show_data():
     conn=sqlite3.connect(db_path)
     cursor=conn.cursor()
-    cursor.execute("SELECT * FROM data")
+    cursor.execute("SELECT * FROM data ORDER BY date DESC")
     rows = cursor.fetchall()
     conn.close()
     return rows

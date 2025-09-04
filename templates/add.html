@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Basic Money - Adding new entry</title>
+    <title>BM - Add new</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon.png') }}">
 </head>
 
+<nav>
+    <a href = "{{url_for('index')}}">
+        <button>Home</button>
+    </a>
+    <a href="{{ url_for('add_form') }}">
+        <button>Add New Entry</button>
+    </a>
+    <a href ="{{ url_for('bulk_edit_form') }}">
+        <button>Bulk Edit</button>
+    </a>
+
+    <button type="submit" form="addForm">Save</button>
+</nav>
+
 <body>
-    <h2>Add New Entry</h2>
-    <p> Here you can add data entries to your Basic Money Table.</p>
-    <form action="/add" method="post">
+    <h1>Add New Entry</h1>
+    <form id="addForm" action="{{ url_for('add_form') }}" method="post">
         <input type="date" name="date" required>
         <input type="number" name="income" placeholder="Income" required>
         <input type="number" name="expense" placeholder="Expense" required>
         <input type="number" name="saving" placeholder="Saving" required>
-        <button type="submit">Add</button>
     </form>
-    <a href="{{ url_for('index') }}">⬅ Back to Home</a>
 </body>
 </html>

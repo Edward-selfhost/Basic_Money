@@ -3,28 +3,23 @@
 <head>
     <title>Basic Money</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        table { border-collapse: collapse; width: 100%; }
-        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
-        form { margin-top: 20px; }
-    </style>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon.png') }}">
 </head>
-<body>
-    <h1>Basic Money</h1>
-    <p>Welcome to Basic Money! A simple money tracking app.</p>
 
+<nav>
+    <a href = "{{url_for('index')}}">
+        <button>Home</button>
+    </a>
     <a href="{{ url_for('add_form') }}">
         <button>Add New Entry</button>
     </a>
-
     <a href ="{{ url_for('bulk_edit_form') }}">
-        <button> Bulk Edit an existing entry</button>
+        <button>Bulk Edit</button>
     </a>
+</nav>
 
-    <p></p>
-    <h2> Your Basic Money Table</h2>
-    <p> Here you can see your Basic Money Table and edit them under the edit column.</p>
+<body>
+    <h1> Your Basic Money Table</h1>
     <table>
         <tr>
             <th>Date</th>
