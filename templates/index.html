@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Money</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<nav>
+    <a href = "{{url_for('index')}}">
+        <button>Home</button>
+    </a>
+    <a href="{{ url_for('add_form') }}">
+        <button>Add New Entry</button>
+    </a>
+    <a href ="{{ url_for('bulk_edit_form') }}">
+        <button>Bulk Edit</button>
+    </a>
+</nav>
+
+<body>
+    <h1> Your Basic Money Table</h1>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Income</th>
+            <th>Expense</th>
+            <th>Saving</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BM - Add new</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<nav>
+    <a href = "{{url_for('index')}}">
+        <button>Home</button>
+    </a>
+    <a href="{{ url_for('add_form') }}">
+        <button>Add New Entry</button>
+    </a>
+    <a href ="{{ url_for('bulk_edit_form') }}">
+        <button>Bulk Edit</button>
+    </a>
+
+    <button type="submit" form="addForm">Save</button>
+</nav>
+
+<body>
+    <h1>Add New Entry</h1>
+    <form id="addForm" action="{{ url_for('add_form') }}" method="post">
+        <input type="date" name="date" required>
+        <input type="number" name="income" placeholder="Income" required>
+        <input type="number" name="expense" placeholder="Expense" required>
+        <input type="number" name="saving" placeholder="Saving" required>
+    </form>
+</body>
+</html>

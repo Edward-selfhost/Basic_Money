@@ -1,0 +1,46 @@
+body { 
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 245, 212);
+    padding: 20px;
+}
+table, .edit_table { 
+    border-collapse: collapse; 
+    font-size: 30px;
+    width: 100%; 
+}
+#addForm input {
+    font-size: 30px;
+}
+th, td { 
+    border: 1px solid #ccc; 
+    padding: 8px; 
+    text-align: center; 
+}
+form { 
+    margin-top: 20px; 
+}
+
+nav {
+    font-size: 30px;
+    background-color: rgb(14, 67, 89);
+    text-align: left;
+    border-radius: 10px;
+    padding: 10px;
+}
+button {
+    color: rgb(255, 245, 212);
+    background-color: rgb(14, 67, 89);
+    border-width: 2px;
+    border-color:rgb(255, 245, 212);
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(255, 245, 212);
+    color: rgb(14, 67, 89)
+}
+a {
+    text-decoration: none; /* This is here due to default formatting of links (whhich the buttons are) and this clears it */
+}
