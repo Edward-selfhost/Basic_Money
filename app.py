@@ -31,6 +31,11 @@ def bulk_edit_form():
         rows = database.show_data()
         for row in rows:
             date = row[0]
+
+            if request.form.get(f"delete_{date}"):
+                database.delete_data(date)
+                continue
+
             income = request.form.get(f"income_{date}")
             expense = request.form.get(f"expense_{date}")
             saving = request.form.get(f"saving_{date}")

@@ -47,4 +47,15 @@ def edit_data(date, income, expense, saving):
     conn.commit()
     cursor.close()
 
+def delete_data(date):
+    conn=sqlite3.connect(db_path)
+    cursor=conn.cursor()
+
+    conn.execute("""
+    DELETE FROM data WHERE date = ?
+    """, (date,))
+
+    conn.commit()
+    cursor.close
+
 create_table()
